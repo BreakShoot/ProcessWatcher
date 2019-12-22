@@ -1,4 +1,4 @@
-class ProcessWatcer : IDisposable
+class ProcessWatcher : IDisposable
 {
     public event OnProcessCreatedDelegate Created;
     private readonly Timer _timer;
@@ -6,7 +6,7 @@ class ProcessWatcer : IDisposable
     private bool _disposed = false;
     private Process _process;
 
-    public ProcessWatcer(string processName)
+    public ProcessWatcher(string processName)
     {
         this._processname = processName;
 
