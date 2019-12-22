@@ -8,11 +8,11 @@ class ProcessWatcer : IDisposable
 
     public ProcessWatcer(string processName)
     {
-        _processname = processName;
+        this._processname = processName;
 
-        _timer = new Timer();
-        _timer.Elapsed += TimerOnElapsed;
-        _timer.Start();
+        this._timer = new Timer();
+        this._timer.Elapsed += TimerOnElapsed;
+        this._timer.Start();
     }
 
     private void TimerOnElapsed(object sender, ElapsedEventArgs e)
@@ -21,8 +21,8 @@ class ProcessWatcer : IDisposable
 
         if (processes.Length == 1)
         {
-            OnProcessCreated(processes[0]);
-            _timer.Stop();
+            this.OnProcessCreated(processes[0]);
+            this._timer.Stop();
         }
     }
 
@@ -49,15 +49,15 @@ class ProcessWatcer : IDisposable
                 _timer.Dispose();
             }
 
-            _disposed = true;
+            this._disposed = true;
         }
     }
 
     public void Dispose()
     {
-        Dispose(true);
+        this.Dispose(true);
         GC.SuppressFinalize(this);
     }
 
-    public delegate void OnProcessCreatedDelegate(Object sender, Process e);
+    public delegate void OnProcessCreatedDelegate(Object sender, Process process);
 }
