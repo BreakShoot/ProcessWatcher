@@ -5,7 +5,6 @@ A non-elevated example of process watching
 ```c#
 class Program
 {
-
     static void Main(string[] args)
     {
         ProcessWatcer processWatcher = new ProcessWatcer("procname");
@@ -15,4 +14,5 @@ class Program
             Console.WriteLine("spotted!");
         };
     }
-}```
+}
+```
