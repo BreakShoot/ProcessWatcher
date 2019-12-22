@@ -7,7 +7,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        ProcessWatcer processWatcher = new ProcessWatcer("procname");
+        ProcessWatcher processWatcher = new ProcessWatcher("procname");
 
         processWatcher.Created += (sender, proc) =>
         {
