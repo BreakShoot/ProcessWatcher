@@ -22,12 +22,12 @@ class ProcessWatcher : IDisposable
         if (processes.Length == 1)
         {
             this.OnProcessCreated(processes[0]);
-            this._timer.Stop();
         }
     }
 
     protected virtual void OnProcessCreated(Process process)
     {
+        this._timer.Stop();
         this._process = process;
         this._process.EnableRaisingEvents = true;
         this._process.Exited += (self, e) => this._timer.Start();
