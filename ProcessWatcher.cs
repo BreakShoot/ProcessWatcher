@@ -1,3 +1,7 @@
+using System;
+using System.Diagnostics;
+using System.Timers;
+
 class ProcessWatcher : IDisposable
 {
     public event OnProcessCreatedDelegate Created;
